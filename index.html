@@ -8,15 +8,6 @@
 </head>
 
 <body>
-  <script>
-    const correct = "secret123"; // ※公開リポジトリだと丸見えになるので注意
-    let p = prompt("パスワードを入力してください:");
-    if (p !== correct) {
-      document.body.innerHTML = "<h2>パスワードが違います</h2>";
-      throw new Error("unauthorized");
-    }
-    // 合っていればそのまま続行
-  </script>
   <!-- 背景 -->
   <div class="bg">
     <!-- ヘッダー -->
