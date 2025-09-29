@@ -1,0 +1,574 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 背景画像 */
+body {
+  position: absolute;
+  z-index: -2;
+  width: 100%;
+  background: url(images/bg1.jpg) no-repeat center center fixed;
+  background-size: cover;
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "微软雅黑", "Microsoft YaHei", sans-serif;
+}
+
+/* 背景オーバーレイ */
+.bg {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* 共通コンテナスタイル */
+.w {
+  max-width: 1200px;
+  margin: 50px auto 0;
+  padding: 50px 60px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.f {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* 基本テキストスタイル */
+h2 {
+  color: #fff;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+h4 {
+  display: inline-block;
+  color: #fff;
+}
+
+p {
+  padding-top: 5px;
+  font-size: 16px;
+  color: #a5a4a4;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+li {
+  list-style: none;
+}
+
+/* ヘッダー */
+.header {
+  display: flex;
+  justify-content: space-between;
+  flex: auto;
+  padding: 40px 60px 20px;
+}
+
+/* ロゴ */
+.header .logo img {
+  width: 65px;
+  height: 50px;
+  border-radius: 14px;
+}
+
+/* ナビゲーション */
+.header .nav {
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  gap: 40px;
+}
+
+.header .nav a button {
+  padding: 10px 20px;
+  background: none;
+  border: 0;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  font-size: 1.25rem;
+  color: #cfcdcd;
+  font-weight: 400;
+}
+
+.header .nav a button:hover {
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 0px 0.5px inset;
+}
+
+/* モバイルナビゲーション */
+.mobile-nav {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 0px 0.5px inset;
+  backdrop-filter: blur(40px);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.mobile-nav img {
+  width: 24px;
+  height: 24px;
+}
+
+/* レスポンシブデザイン: ナビゲーション */
+@media (max-width: 1024px) {
+  .nav {
+    grid-template-columns: repeat(5, auto);
+  }
+
+  .nav>a:nth-child(4) {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .nav {
+    grid-template-columns: repeat(4, auto);
+  }
+
+  .nav>a:nth-child(3) {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav {
+    grid-template-columns: repeat(3, auto);
+  }
+
+  .nav>a:nth-child(2) {
+    display: none;
+  }
+}
+
+@media (max-width: 550px) {
+  .header {
+    padding: 20px 40px 10px;
+  }
+
+  .header .nav {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: flex;
+  }
+}
+
+/* 基本情報セクション */
+#info {
+  display: grid;
+  grid-template-columns: 50% auto;
+  gap: 80px;
+  align-items: center;
+}
+
+#info .info-photo img {
+  float: left;
+  width: 350px;
+  height: 350px;
+  border-radius: 10px;
+}
+
+#info .info-text {
+  position: relative;
+}
+
+#info .info-text h4 {
+  padding: 10px 30px;
+  background-color: #02a78f;
+}
+
+#info .info-text .triangle {
+  position: absolute;
+  left: 10px;
+  border: 8px solid transparent;
+  border-top-color: #02a78f;
+}
+
+#info .info-text p {
+  padding: 10px 0 30px;
+  border-bottom: 1px solid #a5a4a4;
+}
+
+#info .info-text table {
+  width: 100%;
+  padding: 20px 0;
+  text-align: left;
+  font-size: 16px;
+  color: #fff;
+}
+
+#info .info-text table th {
+  font-weight: 400;
+}
+
+#info .info-text table td {
+  padding: 5px;
+  color: #cfcdcd;
+}
+
+/* レスポンシブデザイン: 基本情報セクション */
+@media (max-width: 950px) {
+  #info {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    padding-bottom: 0;
+  }
+
+  #info .info-photo {
+    justify-content: center;
+    align-items: center;
+  }
+
+  #info .info-photo img {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* 経歴セクション */
+#experience .exp {
+  display: grid;
+  grid-template-rows: repeat(3 1fr);
+  grid-template-columns: 1fr 3.5fr;
+  gap: 80px;
+  padding-top: 60px;
+}
+
+#experience .exp .item-img,
+.item-marumado {
+  width: 350px;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+#experience .exp .item-img img,
+.item-marumado img,
+#experience .exp .item-content .item-title .icons img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+#experience .exp .item-content .item-title {
+  height: 55px;
+  line-height: 55px;
+  margin-bottom: 5px;
+}
+
+#experience .exp .item-content .item-title .icons {
+  float: left;
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+#experience .exp .item-content .item-title h4 {
+  font-size: 25px;
+}
+
+#experience .exp .item-content dl {
+  color: #cfcdcd;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+#experience .exp .item-content dl dt {
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+#experience .exp .item-content dl dd {
+  margin-bottom: 10px;
+}
+
+#experience .exp .item-content dl strong {
+  color: #fff;
+  font-size: 16px;
+}
+
+/* 経歴内容 - 簡略版　ー　レスポンシブデザイン用 */
+#experience .exp-simple {
+  display: none;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 50px;
+  padding-top: 60px;
+}
+
+#experience .exp-simple .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  transform: translateY(0);
+  transition: 0.3s ease-in-out;
+  border-radius: 20px;
+  padding: 30px;
+}
+
+#experience .exp-simple .item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(210, 206, 206, 0.5);
+}
+
+#experience .exp-simple .item .item-content h4 {
+  font-size: 20px;
+}
+
+#experience .exp-simple .item .item-img,
+#experience .exp-simple .item .item-marumado {
+  width: 220px;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+#experience .exp-simple .item .item-marumado {
+  border-radius: 50%;
+}
+
+#experience .exp-simple .item .item-img img,
+#experience .exp-simple .item .item-marumado img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* レスポンシブデザイン　ー　経歴内容 */
+@media (max-width: 1150px) {
+  #experience .exp {
+    display: none;
+  }
+
+  #experience .exp-simple {
+    display: grid;
+    grid-template-columns: repeat(3 1fr);
+  }
+}
+
+@media (max-width: 1025px) {
+  #experience .exp-simple {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 550px) {
+  #experience .exp-simple {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+/* スキルセクション */
+.skills-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
+}
+
+.skill-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.skill-name {
+  font-weight: bold;
+  color: #2c3e50;
+  font-size: 1.1rem;
+  min-width: 120px;
+}
+
+.skill-display {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex: 1;
+  max-width: 600px;
+}
+
+.skill-bar {
+  flex: 1;
+  height: 12px;
+  background-color: #ecf0f1;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-progress {
+  height: 100%;
+  background: linear-gradient(90deg, #42b983, #34a853);
+  border-radius: 6px;
+  width: 0%;
+  transition: width 1.5s ease-in-out;
+}
+
+.skill-percentage {
+  font-weight: bold;
+  color: #42b983;
+  min-width: 40px;
+  text-align: right;
+  font-size: 1rem;
+}
+
+.skills-container h3 {
+  text-align: left;
+  color: #fff;
+  padding: 30px 0;
+}
+
+.skills-container>p {
+  text-align: left;
+  color: #fff;
+  padding-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+/* レスポンシブデザイン ー スキルセクション */
+@media (max-width: 768px) {
+  .skill-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .skill-display {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .skill-name {
+    min-width: auto;
+  }
+}
+
+/* 連絡先　footer */
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+#contact a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#contact a img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+
+
+
+
+
+/* モーダルウィンドウのスタイル */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content {
+  background-color: #2c3e50;
+  margin: 15% auto;
+  padding: 30px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.3s ease-out;
+  border: 1px solid #42b983;
+}
+
+.modal-content p {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+#close-modal {
+  background: linear-gradient(135deg, #42b983, #34a853);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+#close-modal:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(66, 185, 131, 0.4);
+}
+
+/* アニメーション */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

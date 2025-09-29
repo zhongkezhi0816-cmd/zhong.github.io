@@ -1,0 +1,239 @@
+<html lang="ja">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>鍾 可芝 - Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <script>
+    const correct = "secret123"; // ※公開リポジトリだと丸見えになるので注意
+    let p = prompt("パスワードを入力してください:");
+    if (p !== correct) {
+      document.body.innerHTML = "<h2>パスワードが違います</h2>";
+      throw new Error("unauthorized");
+    }
+    // 合っていればそのまま続行
+  </script>
+  <!-- 背景 -->
+  <div class="bg">
+    <!-- ヘッダー -->
+    <header class="header f">
+      <!-- ロゴ -->
+      <a href="#" class="logo"><img src="images/logo.png" alt="ロゴ"></a>
+      <!-- ナビゲーション -->
+      <nav class="nav">
+        <a href="#info"><button>Home</button></a>
+        <a href="#experience"><button>Experience</button></a>
+        <a href="#skills"><button>Skills</button></a>
+        <a href="#contact"><button>Contact</button></a>
+      </nav>
+      <!-- モバイルナビゲーション -->
+      <div class="mobile-nav">
+        <img src="images/mobile-nav.svg" alt="モバイルメニュー">
+      </div>
+    </header>
+
+    <!-- 基本情報セクション -->
+    <div id="info" class="w">
+      <div class="info-photo"><img src="images/photo.jpg" alt="個人写真"></div>
+      <div class="info-text">
+        <h4>こんにちは！</h4>
+        <div class="triangle"></div>
+        <p>ユーザーと技術の架け橋になりたい</p>
+        <table>
+          <tr>
+            <th>名前</th>
+            <td>鍾　可芝</td>
+          </tr>
+          <tr>
+            <th>生年月日</th>
+            <td>1996年8月16日</td>
+          </tr>
+          <tr>
+            <th>電話番号</th>
+            <td>080-9580-6383</td>
+          </tr>
+          <tr>
+            <th>住所</th>
+            <td>静岡県浜松市中央区和合町936-105<br>ルミナス和合201</td>
+          </tr>
+          <tr>
+            <th>メールアドレス</th>
+            <td>zhongkezhi0816@icloud.com</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- 経歴セクション -->
+    <div id="experience" class="w">
+      <!-- ヘッダー説明 -->
+      <div class="exp-header">
+        <h2>Experience</h2>
+        <p>元ホテルフロントで培ったユーザー視点と、アプリ開発へのUX改善提案の経験を持ち、現在はフロントエンドエンジニアを目指して日々学習中です。</p>
+      </div>
+
+      <!-- 経歴内容 -->
+      <div class="exp">
+        <!-- 職務経歴 -->
+        <div class="item-img"><img src="images/hotel.webp" alt="前職：ホテルフロント"></div>
+        <div class="item-content">
+          <div class="item-title">
+            <div class="icons"><img src="images/icons1.png" alt="ユーザー視点アイコン"></div>
+            <h4>&nbsp;ユーザー視点</h4>
+          </div>
+          <dl>
+            <dt>ホテルフロント業務</dt>
+            <dd><strong>要件の聞き取りと分析 :</strong> お客様の曖昧な要望を丁寧にヒアリングし、ご希望に最適な客室タイプやサービスを論理的に提案。</dd>
+            <dd><strong>正確な情報管理 :</strong> 予約システムを使い、複雑な予約状況を正確に管理。ミスのない情報処理を心がけました。</dd>
+            <dd><strong>課題の即時対応 :</strong> クレームやトラブル発生時、感情的にではなく状況を客観的に分析し、最適な解決策を迅速に提供。</dd>
+            <p><strong>実績例 :</strong>
+              出張客からの「朝早くて朝食が食べられない」という声を受け、
+              <strong>「朝食のテイクアウト弁当」の導入を提案・実施しました。</strong>
+              実施後には「時間に追われる出張で助かった」などの感謝の声をいただき、
+              朝食サービス改善に貢献しました。
+            </p>
+          </dl>
+        </div>
+
+        <!-- 開発提案 -->
+        <div class="item-marumado"><img src="images/marumado.svg" alt="ペルソナテスト"></div>
+        <div class="item-content">
+          <div class="item-title">
+            <div class="icons"><img src="images/icons2.png" alt="問題発見アイコン"></div>
+            <h4>&nbsp;問題発見と価値創出</h4>
+          </div>
+          <dl>
+            <dt>ペルソナテスト</dt>
+            <dd><strong>核心的なUX課題の特定 :</strong> 開発チームが見過ごしがちな、直感的な操作性の違和感を具体的に指摘。</dd>
+            <dd><strong>開発者視点への翻訳 :</strong> 単なる「使いにくい」という感想ではなく、「なぜ使いにくいのか」を論理的に分析し、改善方向性を提案。</dd>
+            <dd><strong>創造的解決の触発 :</strong>
+              ユーザー視点からの具体的なフィードバックが、開発チームの技術的な解決策の考案を促し、<strong>現在特許出願を準備中の段階に発展しました。</strong></dd>
+          </dl>
+          <p>この経験を通じて、コードを書くこと以前の「要求発見」と「問題定義」という、開発プロセスにおける上流工程の重要性を体感しました。</p>
+        </div>
+
+        <!-- 学習中 -->
+        <div class="item-img"><img src="images/FE.png" alt="フロントエンドエンジニア"></div>
+        <div class="item-content">
+          <div class="item-title">
+            <div class="icons"><img src="images/icons3.png" alt="キャリアチェンジアイコン"></div>
+            <h4>&nbsp;キャリアチェンジと将来像</h4>
+          </div>
+          <p>
+            これらの経験を経て、単に「課題を見つけて提案する」だけではなく、自ら手を動かし、Web技術を用いて具体的な解決を実装できる人材になりたいと強く考えるようになりました。その思いから独学でHTML/CSSを学び、現在はポートフォリオサイトを制作しながら着実にスキルを積み重ねています。
+          </p>
+          <br />
+          <p>
+            そして、デザインと技術を融合し、常に新しい価値を生み出してきた御社の理念に深く共感し、ここでなら私の「ユーザー視点」と「課題解決力」を活かしつつ、エンジニアとして成長できると確信しております。未経験からの挑戦ではありますが、これまで培った問題発見力と学習適応力を最大限に発揮し、一日も早く御社のプロジェクトに貢献できるよう尽力いたします。
+          </p>
+        </div>
+      </div>
+
+      <!-- 経歴内容 - 簡略版 -->
+      <div class="exp-simple">
+        <div class="item">
+          <div class="item-content">
+            <h4>ユーザー視点</h4>
+            <p>顧客満足度5%向上</p>
+          </div>
+          <div class="item-img"><img src="images/hotel.webp" alt="ホテルフロント経験"></div>
+        </div>
+        <div class="item">
+          <div class="item-content">
+            <h4>問題発見と価値創出</h4>
+            <p>特許出願に貢献した問題発見力</p>
+          </div>
+          <div class="item-marumado"><img src="images/marumado.svg" alt="UX改善提案"></div>
+        </div>
+        <div class="item">
+          <div class="item-content">
+            <h4>キャリアチェンジと将来像</h4>
+            <p>IT業界を目指す！</p>
+          </div>
+          <div class="item-img"><img src="images/FE.png" alt="フロントエンド学習"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- スキルセクション -->
+    <section id="skills" class="skills-container w">
+      <h2>My Skills</h2>
+
+      <div class="skills-wrapper">
+        <!-- スキル1 -->
+        <div class="skill-box">
+          <span class="skill-name">HTML</span>
+          <div class="skill-display">
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="85"></div>
+            </div>
+            <span class="skill-percentage">0%</span>
+          </div>
+        </div>
+
+        <!-- スキル2 -->
+        <div class="skill-box">
+          <span class="skill-name">CSS</span>
+          <div class="skill-display">
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="80"></div>
+            </div>
+            <span class="skill-percentage">0%</span>
+          </div>
+        </div>
+
+        <!-- スキル3 -->
+        <div class="skill-box">
+          <span class="skill-name">JavaScript</span>
+          <div class="skill-display">
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="30"></div>
+            </div>
+            <span class="skill-percentage">0%</span>
+          </div>
+        </div>
+      </div>
+
+      <h3>【本サイトで使用した技術】</h3>
+      <p>- HTML5 - CSS3 - Flexbox/Grid - レスポンシブデザイン - JavaScript - </p>
+    </section>
+
+    <!-- 連絡先 -->
+    <footer id="contact" class="contact f">
+      <h2>Contact Me</h2>
+      <div class="contact-me">
+        <a href="mailto:zhongkezhi0816@icloud.com">
+          <img src="images/E-Mail.png" alt="メール">zhongkezhi0816@icloud.com
+        </a>
+        <a href="#" id="github-link">
+          <img src="images/GitHub.png" alt="GitHub">GitHubプロジェクト
+        </a>
+      </div>
+    </footer>
+
+    <!-- モーダルウィンドウを追加 -->
+    <div id="loading-modal" class="modal">
+      <div class="modal-content">
+        <p>準備中です。しばらくお待ちください。</p>
+        <button id="close-modal">閉じる</button>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+</body>
+
+</html>
