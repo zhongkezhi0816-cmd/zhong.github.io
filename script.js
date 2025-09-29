@@ -1,14 +1,4 @@
 
-// // パスワード設置
-// const correct = "zkz0816"; // 
-// let p = prompt("パスワードを入力してください:");
-// if (p !== correct) {
-//   document.body.innerHTML = "<h2>パスワードが違います</h2>";
-//   throw new Error("unauthorized");
-// }
-
-
-
 // スキルセクションアニメション効果
 document.addEventListener('DOMContentLoaded', function () {
   // すべてのプログレスバー要素を取得
